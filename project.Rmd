@@ -119,6 +119,11 @@ confusionMatrix(gbmPredictions, modelTesting$classe)$overall[1]
 ```{r rpart-accuracy}
 confusionMatrix(rpartPredictions, modelTesting$classe)$overall[1]
 ```
+# Detailed look at Random Forest
+Random Forest appears to be one of the most accurate of the algorithms we've tried and it is very easy-to-understand. Here we will look at how the algorithm performs and where it makes mistakes.
+```{r}
+confusionMatrix(rfPredictions, modelTesting$classe)
+```
 
 ```{r write-files, echo=FALSE}
 pml_write_files = function(x){

@@ -327,6 +327,46 @@ rpartPredictions &lt;- predict(rpartModel, modelTesting)
 ##   0.5319
 </code></pre>
 
+<h1>Detailed look at Random Forest</h1>
+
+<p>Random Forest appears to be one of the most accurate of the algorithms we&#39;ve tried and it is very easy-to-understand. Here we will look at how the algorithm performs and where it makes mistakes.</p>
+
+<pre><code class="r">confusionMatrix(rfPredictions, modelTesting$classe)
+</code></pre>
+
+<pre><code>## Confusion Matrix and Statistics
+## 
+##           Reference
+## Prediction    A    B    C    D    E
+##          A 1673    2    0    0    0
+##          B    1 1135    2    0    0
+##          C    0    2 1023    7    0
+##          D    0    0    1  957    1
+##          E    0    0    0    0 1081
+## 
+## Overall Statistics
+##                                         
+##                Accuracy : 0.997         
+##                  95% CI : (0.996, 0.998)
+##     No Information Rate : 0.284         
+##     P-Value [Acc &gt; NIR] : &lt;2e-16        
+##                                         
+##                   Kappa : 0.997         
+##  Mcnemar&#39;s Test P-Value : NA            
+## 
+## Statistics by Class:
+## 
+##                      Class: A Class: B Class: C Class: D Class: E
+## Sensitivity             0.999    0.996    0.997    0.993    0.999
+## Specificity             1.000    0.999    0.998    1.000    1.000
+## Pos Pred Value          0.999    0.997    0.991    0.998    1.000
+## Neg Pred Value          1.000    0.999    0.999    0.999    1.000
+## Prevalence              0.284    0.194    0.174    0.164    0.184
+## Detection Rate          0.284    0.193    0.174    0.163    0.184
+## Detection Prevalence    0.285    0.193    0.175    0.163    0.184
+## Balanced Accuracy       0.999    0.998    0.998    0.996    1.000
+</code></pre>
+
 </body>
 
 </html>
